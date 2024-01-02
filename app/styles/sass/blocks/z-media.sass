@@ -1,0 +1,479 @@
+@media (max-width: 1399.98px)
+
+	.card-form
+
+		.card-img
+			right: -520px
+			bottom: -220px
+
+	.card-skipass
+
+		.card-header
+
+			& > *
+				width: 70%
+
+	.card-skipass--full
+
+		.card-text
+
+			.btn
+				width: 100%
+
+@media (max-width: 1199.98px)
+
+	h1, .h1
+		font-size: 3rem
+
+	h2, .h2
+		font-size: 2.25rem
+
+	h4, .h4
+		font-size: 1.5rem
+
+	h5, .h5
+		font-size: 1.25rem
+
+	.filters
+		grid-template-columns: repeat(2, auto)
+		grid-auto-flow: initial
+
+	.card-form
+
+		.tab-pane .card-body,
+		.card-body
+
+			& > *:not(.card-img)
+				max-width: 100%
+		
+		.card-img
+			right: -560px
+
+	.card-skipass--full
+
+		.card-header
+
+			& > *
+				width: 75%
+
+@media (max-width: 991.98px)
+
+	.page
+
+		&-header
+
+			.alert
+				width: 100%
+				max-width: calc(  var(--bs-container-md) - var(--bs-gutter-x) )
+				position: fixed
+				top: 1rem
+				left: 50%
+				transform: translateX(-50%)
+				z-index: var(--bs-zindex-fixed)
+	
+	.offcanvas
+		border-radius: var(--bs-border-radius-xl) 0 0 var(--bs-border-radius-xl)
+		padding: 1.5rem 1rem 2rem 2rem
+		box-shadow: var(--bs-box-shadow-lg)
+
+		&-header
+			margin-bottom: 2rem
+
+		.btn-close
+			background-color: var(--bs-white)
+			border-radius: 50%
+			margin-left: auto
+			padding: .5rem
+
+	.navbar
+
+		.nav-item
+
+			&:not(:first-child)
+				margin: initial
+
+			&:not(:last-child)
+				margin: initial
+				margin-bottom: var(--bs-navbar-nav-item-margin-y)
+
+		.nav-link
+			display: flex
+			align-items: center
+			padding-left: .5rem
+
+			.icon
+				display: block
+				margin-right: 1rem
+
+		&-footer
+			display: block
+			margin-top: auto
+			color: var(--bs-gray-600)
+
+			&>a
+				display: block
+
+	.table-responsive
+
+		.table
+			min-width: 680px
+
+	.table
+
+		& > :not(caption) 
+		
+			& > * > *
+				padding: .3rem 1.25rem
+
+				&:first-child
+					padding-left: .5rem
+
+				&:last-child
+					padding-right: .5rem
+
+	.card-form
+
+		&-inputs
+			flex-direction: column
+
+		.has-validation,
+		.form-floating
+
+			&-xs,
+			&-sm
+				max-width: initial
+
+	.card-skipass
+
+		.card-header
+
+			& > *
+				width: 75%
+
+	.card-skipass--full
+
+		.card-body-wrapper
+
+			& > *
+
+				&:first-child
+
+					.card-body
+						border-radius: calc( var(--bs-card-border-radius) / 5 )
+
+				&:last-child
+				
+					.card-body
+						border-radius: calc( var(--bs-card-border-radius) / 5 ) calc( var(--bs-card-border-radius) / 5 ) var(--bs-card-border-radius) var(--bs-card-border-radius)
+
+	.card-list
+		min-height: initial
+
+		.card-header
+			min-height: initial
+
+			& > p
+				max-width: initial
+
+
+@media (max-width: 767.98px)
+
+	.page
+
+		&-header
+
+			.alert
+				max-width: calc(  var(--bs-container-sm) - var(--bs-gutter-x) )
+
+	.filters
+		width: 100%
+		grid-template-columns: 1fr
+
+	.card-skipass
+
+		.card-header
+
+			& > *
+				width: 64%
+
+	.modal
+		padding: .5rem !important
+
+		&-header
+			padding: 4.25rem 4.5rem var(--bs-modal-header-padding-y)
+
+		&-body
+			padding: 0 4.5rem
+
+		&-footer
+			padding: 1.5rem 4.5rem 4.25rem
+
+@media (max-width: 575.98px)
+
+	.container
+		--bs-gutter-x: 1rem
+
+	.page
+
+		&-header
+
+			h1
+				margin-bottom: 0
+
+			.alert
+				--bs-gutter-x: 1rem
+				width: initial
+				max-width: initial
+				left: calc( var(--bs-gutter-x) / 2 )
+				right: calc( var(--bs-gutter-x) / 2 )
+				transform: initial
+
+	.btn
+
+		&:not(.btn-link, .btn-reset)
+			--bs-btn-padding-x: 1.375rem
+
+	.btn-icon
+		--bs-btn-padding-x: 1.375rem
+		--bs-btn-padding-y: .625rem
+
+	.breadcrumb
+		display: none
+
+	.alert
+		padding: 1rem 2rem 1rem 1rem
+
+	.card
+		--bs-card-spacer-y: 1.5rem
+		--bs-card-spacer-x: 1rem
+		--bs-card-cap-padding-y: 1rem
+
+		&:not(.card-mini, .card-add)
+			min-height: 300px
+
+		&:not(:last-child)
+			margin-bottom: .75rem
+
+		&-title
+			margin-bottom: 1.5rem
+
+		&-text
+			margin-bottom: 1rem
+
+		&-button
+
+			.btn-outline-primary,
+			.btn-secondary,
+			.btn-primary
+				width: 100%
+
+	.card-bigger
+
+		&:not(.card-form)
+			--bs-card-cap-padding-x: 1rem
+			--bs-card-spacer-x: .5rem
+
+	.card-form
+
+		.card-title
+
+			.h1
+				font-size: 2.25rem
+				line-height: 2.5rem
+
+	.card-mini
+		background-position: calc( 100% + 5.5rem ) 0%
+		background-size: 220px
+
+		&:not(&--bank)
+
+			.card-header,
+			.card-body
+				width: 100%
+				max-width: 320px
+
+	.card-mini--bank
+		--bs-card-spacer-y: 1rem
+		--bs-card-cap-padding-x: 1rem
+
+	.card-skipass
+		--bs-card-spacer-y: 1rem
+		--bs-card-spacer-x: 1.5rem
+
+		.card-header
+			background-position: calc(100% + 4.75rem) 0%
+			background-size: 210px
+
+			& > *
+				width: 100%
+				max-width: 280px
+
+		.card-body
+			padding: var(--bs-card-spacer-y) 1rem 1.25rem var(--bs-card-spacer-x)
+
+			.btn
+				margin-top: 1.5rem
+				margin-left: -.5rem
+
+		.card-text
+			flex-direction: column
+			align-items: stretch
+
+			&-left
+				font-size: var(--bs-font-size)
+				line-height: normal
+				margin-bottom: .5rem
+
+			& > * 
+				max-width: initial
+				text-align: left
+
+	.card-skipass--full
+		--bs-card-spacer-y: .75rem
+
+		.card-header
+
+			&.mb-2
+				margin-bottom: .25rem !important
+
+		.card-title
+			font-size: calc( var(--bs-font-size-lg) - .125rem )
+			line-height: 1.75rem
+
+			.btn-icon
+
+				.icon
+					--i-size: 1rem
+
+		.card-body-wrapper
+			--bs-gutter-y: .25rem
+
+		.card-body
+			padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x) calc( var(--bs-card-spacer-y) * 2 ) var(--bs-card-spacer-x)
+
+		.card-text
+
+			&-left
+				font-size: var(--bs-font-size-md)
+				font-weight: var(--bs-font-weight-medium)
+				line-height: 1.375rem
+				color: var(--bs-gray-800)
+
+	.btn-remove
+		width: 100%
+
+	.wrapper-talbe
+		--table-gutter-x: 0
+
+		tr
+
+			&::before,
+			&::after
+				all: initial
+
+		tbody
+
+			tr
+
+				&:hover
+
+					& > *
+						border-color: transparent
+
+						&:first-child
+							border-top-left-radius: .75rem
+							border-bottom-left-radius: .75rem
+
+						&:last-child
+							border-top-right-radius: .75rem
+							border-bottom-right-radius: .75rem
+
+	.table-responsive
+
+		.table
+			min-width: 580px
+	
+	.table
+		font-size: var(--bs-font-size)
+
+		.badge
+			--bs-badge-font-size: var(--bs-font-size)
+			--bs-badge-padding-x: .625rem
+
+	.widget
+		padding: 1.5rem 1rem
+
+	.filters
+		padding: .75rem 1rem
+
+	.modal
+		--bs-modal-title-line-height: normal
+		--bs-modal-header-padding-y: 1.5rem
+		--bs-modal-footer-gap: 1.5rem
+		padding: 0 !important
+
+		&-content
+			min-height: calc( 100vh - var(--bs-modal-margin) * 2)
+			justify-content: center
+
+		&-header
+			padding: 4.25rem 1rem var(--bs-modal-header-padding-y)
+
+		&-body
+			padding: 0 1rem
+			flex: 0
+
+		&-footer
+			padding: 1.5rem 1rem 4.25rem
+
+			& > *
+				width: 100%
+
+				&:not(:last-child)
+					margin-right: initial
+					margin-bottom: var(--bs-modal-footer-gap)
+
+		&-img
+			min-height: 170px
+			position: absolute
+			top: 0
+			left: 0
+
+		&-title
+			font-size: 2.25rem
+
+		&-current
+
+			& > *:not(:last-child)
+				margin-bottom: .5rem
+
+	#successSignUp
+		text-align: center
+
+		.btn-close
+			background-color: rgba(255, 255, 255, 0.5)
+
+		.modal-header
+			margin-top: 170px
+			justify-content: center
+			padding-left: 3.75rem
+			padding-right: 3.75rem
+
+		.modal-body,
+		.modal-footer
+			padding-left: 1.5rem
+			padding-right: 1.5rem
+
+		.modal-footer
+			flex-direction: column
+			align-items: center
+
+			& > *
+				width: fit-content
+
+	.footer
+		padding: 1rem 0
+
+		&-text
+			flex-direction: column
+			align-items: center

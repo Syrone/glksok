@@ -1,0 +1,17 @@
+.draggable
+	cursor: move
+	user-select: none
+
+	& *
+		user-select: none
+
+	&.dragging
+		will-change: transform
+		
+		.card
+			--bs-card-bg: var(--bs-primary-light)
+
+	&.dragover
+
+		.card
+			--bs-card-bg: var(--bs-primary-dark)

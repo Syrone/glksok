@@ -1,0 +1,421 @@
+// GENERAL PROJECT STYLES
+
+.page
+	min-height: 100vh
+	min-height: 100dvh
+	display: flex
+	flex-direction: column
+
+	main
+		flex: 1
+
+	&-header
+		padding: 1rem 0 1.5rem
+
+		h1
+			margin-bottom: 2rem
+
+		.alert
+			top: -1rem
+
+
+h1, .h1
+	line-height: 3.125rem
+
+h2, .h2
+	line-height: 2.375rem
+
+h4, .h4
+	line-height: 1.75rem
+
+h5, .h5
+	line-height: 1.5rem
+
+a
+	text-decoration: none
+	transition: color .3s ease-in-out, background .3s ease-in-out
+
+.is-hidden
+	display: none
+
+
+
+.btn-primary
+	--bs-btn-hover-color: var(--bs-blue-light)
+	--bs-btn-hover-bg: var(--bs-primary-light)
+	--bs-btn-hover-border-color: var(--bs-primary-light)
+	--bs-btn-active-color: var(--bs-blue)
+	--bs-btn-active-bg: var(--bs-primary-dark)
+	--bs-btn-active-border-color: var(--bs-primary-dark)
+
+.btn-outline-primary
+	--bs-btn-bg: var(--bs-white)
+	--bs-btn-border-color: var(--bs-border-color)
+	--bs-btn-hover-color: var(--bs-blue-light)
+	--bs-btn-hover-bg: var(--bs-primary-light)
+	--bs-btn-hover-border-color: var(--bs-primary-light)
+	--bs-btn-active-color: var(--bs-blue)
+	--bs-btn-active-bg: var(--bs-primary-dark)
+	--bs-btn-active-border-color: var(--bs-primary-dark)
+
+	display: flex
+	align-items: center
+	justify-content: center
+
+	.icon
+		--i-size: 2.25rem
+		--i-color: var(--bs-secondary)
+
+		margin: -.375rem .5rem -.375rem 0
+
+
+.btn-secondary
+	--bs-btn-color: var(--bs-white)
+	--bs-btn-hover-color: var(--bs-white)
+	--bs-btn-active-color: var(--bs-white)
+	--bs-btn-active-bg: var(--bs-secondary-dark)
+	--bs-btn-active-border-color: var(--bs-secondary-dark)
+	--bs-btn-disabled-color: var(--bs-white)
+
+.btn-link
+	--bs-btn-padding-x: .5rem
+	--bs-btn-padding-y: .25rem
+	--bs-btn-font-weight: 500
+	--bs-btn-color: var(--bs-blue)
+	--bs-btn-disabled-color: var(--bs-gray-500)
+	--bs-btn-border-width: 0
+	--bs-btn-focus-box-shadow: 0 0 0 0.125rem rgba(var(--bs-btn-focus-shadow-rgb),.5)
+	margin: calc( var(--bs-btn-padding-y) * -1 ) calc( var(--bs-btn-padding-x) * -1 )
+	text-decoration: none
+
+.btn-light
+	--bs-btn-color: var(--bs-secondary)
+	--bs-btn-hover-color: var(--bs-white)
+	--bs-btn-active-color: var(--bs-white)
+	--bs-btn-disabled-color: var(--bs-white)
+	--bs-btn-hover-bg: var(--bs-secondary)
+	--bs-btn-active-bg: var(--bs-secondary-dark)
+	--bs-btn-hover-border-color: var(--bs-secondary)
+	--bs-btn-active-border-color: var(--bs-secondary-dark)
+	--bs-btn-border-color: var(--bs-border-color)
+	--bs-btn-focus-box-shadow: none
+
+.btn-icon
+	--bs-btn-padding-x: 1.5rem
+	--bs-btn-padding-y: .625rem
+	display: flex
+	align-items: center
+	justify-content: center
+
+	.icon
+		--i-size: 1rem
+		--i-color: inherit
+		transition: initial
+
+	.icon-xxl
+		--i-size: 2.25rem
+
+.btn-reset
+	--bs-btn-padding-y: 0
+	--bs-btn-padding-x: 0
+	--bs-btn-bg: var(--bs-white)
+	--bs-btn-hover-bg: var(--bs-white)
+	--bs-btn-active-bg: var(--bs-white)
+	--bs-btn-border-width: 0
+	--bs-btn-border-radius: 50%
+	transition: opacity 150ms ease-in-out, visibility 150ms ease-in-out
+
+	.icon
+		--i-color: var(--bs-gray-700)
+		opacity: .8
+		transition: opacity 300ms ease-in-out
+
+	&:is(:hover, :focus-visible, :active)
+
+		.icon
+			opacity: 1
+
+.btn-close
+	--bs-btn-close-focus-shadow: none
+	--bs-btn-close-color: var(--bs-blue)
+	width: 1rem
+	height: 1rem
+	padding: .25rem
+	border-radius: 50%
+
+	top: .75rem
+	right: .75rem
+
+	transition: opacity 300ms ease-in-out
+
+	&.btn-icon
+		--bs-btn-close-hover-opacity: 1
+		--bs-btn-close-bg: none
+
+		&:is(:hover, :focus, :active, .active)
+			background-color: var(--bs-blue-light-rgba-15)
+
+			.icon
+				opacity: .8
+
+		&:is(:active, .active)
+			
+			.icon
+				opacity: 1
+
+.was-validated,
+
+	.form-control
+		
+		&:invalid:focus
+			box-shadow: none
+
+.form
+
+	&-control
+
+		&.is-invalid
+
+			&:focus
+				box-shadow: none
+
+		&-reset
+
+			.btn-reset
+				opacity: 0
+				visibility: hidden
+				position: absolute
+				top: 50%
+				right: 1rem
+				transform: translateY(-50%)
+
+			.form-control
+				padding-right: 3rem
+
+			&.is-show
+
+				.btn-reset
+					visibility: visible
+					opacity: 1
+
+		&-id
+			text-transform: uppercase
+
+	&-select
+
+		&:focus
+			background-color: var(--bs-gray-400)
+
+	&-check
+		display: flex
+		align-items: center
+
+		&-input
+			float: initial
+			margin-top: initial
+			margin-right: .5rem
+
+			&:is(:hover, :focus, :checked)
+
+				~ label
+					color: var(--bs-black)
+
+		&-label
+			font-size: 1.125rem
+			color: var(--bs-gray-700)
+			font-weight: 500
+			line-height: normal
+			transition: color 300ms ease-in-out
+
+.text-bg-secondary
+	color: var(--bs-white) !important
+
+.icon
+	--i-size: 1.5rem
+	--i-color: var(--bs-primary)
+	display: block
+	width: var(--i-size)
+	height: var(--i-size)
+	color: var(--i-color)
+	flex-shrink: 0
+	transition: color .3s ease-in-out, transform .3s ease-in-out
+
+	svg
+		width: 100%
+		height: 100%
+		display: block
+		object-fit: contain
+
+	&-solid
+		fill: currentColor
+
+	&-outline
+		stroke: currentColor
+
+.breadcrumb
+	margin-left: 2rem
+	margin-bottom: 0
+
+	&-item
+
+		a
+			color: var(--bs-primary)
+
+			&:hover
+
+				.icon
+					--i-color: var(--bs-link-color-rgb)
+
+.alert
+	--bs-alert-margin-bottom: 0
+	font-size: var(--bs-font-size-md)
+	font-weight: 500
+	line-height: normal
+	box-shadow: var(--bs-box-shadow-lg)
+
+	& > .icon
+		margin-bottom: .5rem
+
+.alert-success
+	--bs-alert-color: var(--bs-black)
+	--bs-alert-bg: var(--bs-white)
+
+	& > .icon
+		--i-size: 2.25rem
+		--i-color: var(--bs-success)
+
+.alert-dismissible
+
+	.btn-close
+		padding: .25rem
+		top: .75rem
+		right: .75rem
+
+.table-responsive
+	max-height: 330px
+	overflow-y: auto
+
+.wrapper-talbe
+	--table-gutter-x: .625rem
+
+	margin-top: 1.5rem
+	padding-left: var(--table-gutter-x)
+	padding-right: var(--table-gutter-x)
+	will-change: scroll-position
+
+	tr
+		position: relative
+		z-index: 1
+
+		&::before,
+		&::after
+			content: ''
+			width: 1.5rem
+			background-color: var(--bs-table-bg)
+			border-radius: 1rem
+			position: absolute
+			top: 0
+			bottom: 0
+			z-index: -1
+
+		&::before
+			left: calc( var(--table-gutter-x) * -1 )
+
+		&::after
+			right: calc( var(--table-gutter-x) * -1 )
+
+	tbody
+
+		tr
+
+			&:hover
+
+				& + tr
+
+					& > *
+						border-color: transparent
+			
+				&::before,
+				&::after
+					background-color: var(--bs-table-hover-bg)
+
+				& > *
+					border-color: var(--bs-table-hover-bg)
+
+.table
+	font-size: var(--bs-font-size-md)
+	line-height: normal
+	margin-bottom: 0
+	position: relative
+
+	& > :not(caption) 
+		
+		& > * > *
+			border-top-width: var(--bs-border-width)
+			border-bottom-width: 0
+
+			&:first-child
+				padding-left: 2rem
+
+	.date
+		width: 33.3333%
+
+	.col-bank
+		width: 241px
+
+	.badge
+		--bs-badge-padding-x: .75rem
+		--bs-badge-padding-y: .25rem
+		--bs-badge-font-weight: 400
+		--bs-badge-border-radius: .5rem
+
+	& > thead 
+		position: sticky
+		top: 0
+		left: 0
+		z-index: 10
+
+		& > * 
+			
+			& > *
+				font-weight: 500
+				white-space: nowrap
+				border-top-width: 0
+
+.badge
+
+	&.text-bg-success
+		background-color: var(--bs-success-light) !important
+
+	&.text-bg-danger
+		background-color: var(--bs-danger-light) !important
+
+.nav-tabs
+	--bs-nav-link-padding-y: 1rem
+	--bs-nav-link-padding-x: 1.5rem
+	--bs-nav-link-color: var(--bs-blue)
+
+
+	border-bottom: 0
+
+	.nav-item
+
+		&:not(:last-child)
+			margin-right: calc( var(--bs-nav-tabs-border-width) * -1 )
+
+		&:first-child
+			
+			.nav-link
+				border-radius: var(--bs-nav-tabs-border-radius) 0 0 var(--bs-nav-tabs-border-radius)
+
+		&:last-child
+			
+			.nav-link
+				border-radius: 0 var(--bs-nav-tabs-border-radius) var(--bs-nav-tabs-border-radius) 0
+
+	.nav-link
+		border-radius: 0
+		border-color: var(--bs-nav-tabs-border-color)
+
+		&:is(:hover, :focus-visible)
+			background-color: #A5D1FE

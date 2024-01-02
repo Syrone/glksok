@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title>glksok</title>
+	<meta name="description" content="Website">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="../images/favicon.svg">
+	
+	<link rel="stylesheet" href="../css/libraries.min.css">
+	<link rel="stylesheet" href="../css/app.min.css">
+
+</head>
+
+<body>
+<div class="page">
+	<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+		<div class="container">
+			<a class="navbar-brand" href="../index.html">
+				<img src="../images/dist/logo.svg" width="56" alt="Logo">
+				<span class="navbar-brand-text">Юрий К.</span>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+				aria-controls="offcanvasNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+				<div class="offcanvas-header">
+					<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть навигационное меню"></button>
+				</div>
+				<div class="offcanvas-body">
+					<ul class="navbar-nav justify-content-end flex-grow-1">
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+								<span class="icon icon-solid icon-home">
+									<svg>
+										<use xlink:href="../images/icons/home.svg#svg-home"></use>
+									</svg>
+								</span>
+								профиль
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="./skipass.html">
+								<span class="icon icon-solid icon-skipass">
+									<svg>
+										<use xlink:href="../images/icons/skipass.svg#svg-skipass"></use>
+									</svg>
+								</span>
+								мои скипассы
+								<span class="badge text-bg-secondary ms-2 my-n2 d-lg-none">
+									2
+								</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<span class="icon icon-solid icon-cash">
+									<svg>
+										<use xlink:href="../images/icons/cash.svg#svg-cash"></use>
+									</svg>
+								</span>
+								баланс
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="./signin.html">
+								<span class="icon icon-solid icon-exit">
+									<svg>
+										<use xlink:href="../images/icons/exit.svg#svg-exit"></use>
+									</svg>
+								</span>
+								выйти
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="navbar-footer">
+					Вопросы по работе:
+					<a href="mailto:info@glksok.ru">info@glksok.ru</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>
+
+	<div class="modal fade" id="removeSkipass" tabindex="-1" aria-labelledby="removeSkipassLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="removeSkipassLabel">
+					Удаление скипасса
+				</h2>
+        <button type="button" class="btn-close btn-icon" data-bs-dismiss="modal" aria-label="Закрыть">
+					<span class="icon icon-solid">
+						<svg>
+							<use xlink:href="../images/icons/cross.svg#svg-cross"></use>
+						</svg>
+					</span>
+				</button>
+      </div>
+			<form action="#" class="form">
+				<div class="modal-body">
+					<p class="modal-text">
+						Вы точно хотите удалить скипасс?
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-secondary">Да</button>
+					<button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Нет</button>
+				</div>
+			</form>
+    </div>
+  </div>
+</div>
+	<div class="modal fade" id="refillSkipass" tabindex="-1" aria-labelledby="refillSkipassLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="refillSkipassLabel">
+					Пополнение баланса скипасса
+				</h2>
+        <button type="button" class="btn-close btn-icon" data-bs-dismiss="modal" aria-label="Закрыть">
+					<span class="icon icon-solid">
+						<svg>
+							<use xlink:href="../images/icons/cross.svg#svg-cross"></use>
+						</svg>
+					</span>
+				</button>
+      </div>
+			<form action="#" class="form needs-validation" novalidate>
+				<div class="modal-body">
+					<div class="modal-current mb-sm-5 mb-4">
+						<span>
+							На общем балансе: <span>3400 руб</span>
+						</span>
+						<span>
+							На счету скипасса: <span>400 руб</span>
+						</span>
+					</div>
+
+					<div class="has-validation mb-sm-3 mb-2">
+						<div class="form-floating form-control-reset">
+							<input type="text" class="form-control form-control-numbers" id="modalFloatingInputCash" maxlength="60" inputmode="numeric"
+								placeholder="Сумма пополнения" required>
+							<label for="modalFloatingInputCash">Сумма пополнения</label>
+							<button type="button" class="btn btn-reset">
+								<span class="icon icon-solid">
+									<svg>
+										<use xlink:href="../images/icons/cross-medium.svg#svg-cross-medium"></use>
+									</svg>
+								</span>
+							</button>
+						</div>
+
+						<div class="invalid-feedback">
+							Вы все неправильно сделали. Нельзя использовать кириллические символы
+						</div>
+					</div>
+
+					<p class="modal-text">
+						Указанная сумма спишется с общего баланса и поступит на баланс скипасса.
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-secondary">Добавить</button>
+				</div>
+			</form>
+    </div>
+  </div>
+</div>
+	<div class="modal fade" id="refundSkipass" tabindex="-1" aria-labelledby="refundSkipassLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="refundSkipassLabel">
+					Возврат на общий баланс
+				</h2>
+        <button type="button" class="btn-close btn-icon" data-bs-dismiss="modal" aria-label="Закрыть">
+					<span class="icon icon-solid">
+						<svg>
+							<use xlink:href="../images/icons/cross.svg#svg-cross"></use>
+						</svg>
+					</span>
+				</button>
+      </div>
+			<form action="#" class="form needs-validation" novalidate>
+				<div class="modal-body">
+					<div class="modal-current mb-sm-5 mb-4">
+						<span>
+							На общем балансе: <span>3400 руб</span>
+						</span>
+						<span>
+							На счету скипасса: <span>400 руб</span>
+						</span>
+					</div>
+
+					<div class="has-validation mb-sm-3 mb-2">
+						<div class="form-floating form-control-reset">
+							<input type="text" class="form-control form-control-numbers" id="modalFloatingInputRefundCash" maxlength="60" inputmode="numeric"
+								placeholder="Сумма списания" required>
+							<label for="modalFloatingInputRefundCash">Сумма списания</label>
+							<button type="button" class="btn btn-reset">
+								<span class="icon icon-solid">
+									<svg>
+										<use xlink:href="../images/icons/cross-medium.svg#svg-cross-medium"></use>
+									</svg>
+								</span>
+							</button>
+						</div>
+
+						<div class="invalid-feedback">
+							Вы все неправильно сделали. Нельзя использовать кириллические символы
+						</div>
+					</div>
+
+					<p class="modal-text">
+						Указанная сумма спишется с баланса скипасса и поступит на общий скипасса. 
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-secondary">Добавить</button>
+				</div>
+			</form>
+    </div>
+  </div>
+</div>
+	<div class="modal fade" id="buySkipass" tabindex="-1" aria-labelledby="buySkipassLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="buySkipassLabel">
+					Купить тариф по времени
+				</h2>
+        <button type="button" class="btn-close btn-icon" data-bs-dismiss="modal" aria-label="Закрыть">
+					<span class="icon icon-solid">
+						<svg>
+							<use xlink:href="../images/icons/cross.svg#svg-cross"></use>
+						</svg>
+					</span>
+				</button>
+      </div>
+			<form action="#" class="form">
+				<div class="modal-body">
+					<div class="modal-current mb-3">
+						<span>
+							На общем балансе: <span>3400 руб</span>
+						</span>
+					</div>
+
+					<p class="modal-text text-black mb-4">
+						Тариф по времени имеет приоритет над “Балансом”, при проходе через турнитет будет будет действовать “Тариф”
+					</p>
+
+					<ul class="list-group list-group-radio mb-3">
+						<li class="list-group-item">
+							<input class="form-check-input" type="radio" name="listGroupRadio" value="" id="modalFirstRadio" checked>
+							<label class="form-check-label stretched-link" for="modalFirstRadio">
+								1 час - 400 ₽
+							</label>
+						</li>
+						<li class="list-group-item">
+							<input class="form-check-input" type="radio" name="listGroupRadio" value="" id="modalSecondRadio">
+							<label class="form-check-label stretched-link" for="modalSecondRadio">
+								2 часа - 700 ₽
+							</label>
+						</li>
+						<li class="list-group-item">
+							<input class="form-check-input" type="radio" name="listGroupRadio" value="" id="modalThirdRadio">
+							<label class="form-check-label stretched-link" for="modalThirdRadio">
+								3 часа - 1000 ₽
+							</label>
+						</li>
+					</ul>
+
+					<p class="modal-text">
+						Указанная сумма спишется с общего баланса
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-secondary">Купить</button>
+				</div>
+			</form>
+    </div>
+  </div>
+</div>
+
+	<main>
+
+		<div class="page-header">
+			<div class="container position-relative">
+				<h1 class="h2">
+					Мои скипассы
+				</h1>
+
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="./home.html">
+								<span class="icon icon-solid">
+									<svg>
+										<use xlink:href="../images/icons/home-outline.svg#svg-home-outline"></use>
+									</svg>
+								</span>
+							</a>
+						</li>
+						<li class="breadcrumb-item">
+							<a href="#">
+								Баланс
+							</a>
+						</li>
+						<li class="breadcrumb-item active" aria-current="page">
+							Мои скипассы
+						</li>
+					</ol>
+				</nav>
+			</div>
+		</div>
+
+		<section>
+			<div class="container">
+				<div class="row gy-sm-4 gy-2">
+					<div class="col-12">
+						<div class="card card-skipass card-skipass--full">
+							<div class="card-header mb-2" style="background-image: url(../images/dist/card-img-2.png);">
+								<h2 class="card-title">
+									Основной очень длинный
+
+									<button type="button" class="btn btn-icon btn-light">
+										<span class="icon icon-solid">
+											<svg>
+												<use xlink:href="../images/icons/pencil-edit.svg#svg-pencil-edit"></use>
+											</svg>
+										</span>
+									</button>
+								</h2>
+
+								<div class="card-subtitle">
+									<div class="card-status is-success">
+										Активен
+										<span class="icon icon-solid">
+											<svg>
+												<use xlink:href="../images/icons/status.svg#svg-status"></use>
+											</svg>
+										</span>
+									</div>
+									<div class="card-id">020805CA5110FE</div>
+								</div>
+							</div>
+
+							
+							<div class="card-body-wrapper row g-2">
+								<div class="col-lg-6">
+									<div class="card-body">
+										<div class="card-text">
+											<span class="card-text-left">
+												Активный тариф для прохода по времени:
+											</span>
+											<div class="card-text-right">
+												<span>Нет</span>
+
+												<button type="button" class="btn btn-secondary ms-xxl-5 mt-xxl-0 mt-4" data-bs-toggle="modal" data-bs-target="#buySkipass">
+													Купить
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-lg-6">
+									<div class="card-body">
+										<div class="card-text">
+											<span class="card-text-left">
+												Баланс для прохода через турникеты:
+											</span>
+											<div class="card-text-right">
+												<span>1500 ₽</span>
+
+												<button type="button" class="btn btn-secondary ms-xxl-5 mt-xxl-0 mt-4" data-bs-toggle="modal" data-bs-target="#refillSkipass">
+													Пополнить
+												</button>
+
+												<button type="button" class="btn btn-outline-primary ms-xxl-3 mt-xxl-0 mt-4" data-bs-toggle="modal" data-bs-target="#refundSkipass">
+													Вернуть на общий
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 mt-sm-4 mt-5">
+						<button type="button" class="btn btn-outline-primary btn-remove" data-bs-toggle="modal" data-bs-target="#removeSkipass">
+							<span class="icon icon-solid">
+								<svg>
+									<use xlink:href="../images/icons/trash.svg#svg-trash"></use>
+								</svg>
+							</span>
+							Удалить скипасс
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="footer">
+	<div class="container">
+		<div class="footer-text">
+			Горнолыйжный комплес <span>«СОК», Самара</span>
+		</div>
+	</div>
+</footer>
+</div>
+	
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/app.min.js"></script>
+
+</body>
+</html>

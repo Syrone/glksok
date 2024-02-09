@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				const textarea = formControlReset.querySelector('textarea');
 				const input = formControlReset.querySelector('input');
 				const btnReset = formControlReset.querySelector('.btn-reset');
+				const btnReveal = formControlReset.querySelector('.btn-reveal');
 				const form = formControlReset.closest('.needs-validation');
 				const btnSubmit = form.querySelector('.btn-disabled[type="submit"]');
 				const inputs = form.querySelectorAll('input:required');
@@ -71,6 +72,22 @@ document.addEventListener('DOMContentLoaded', () => {
 							formControlReset.classList.add('is-show');
 						} else {
 							formControlReset.classList.remove('is-show');
+						}
+					})
+				}
+
+				if (btnReveal) {
+					btnReveal.addEventListener('click', function () {
+						btnReveal.classList.toggle('is-show')
+
+						if (!input) {
+							return
+						} else {
+							if (btnReveal.classList.contains('is-show')) {
+								input.type = 'text';
+							} else {
+								input.type = 'password';
+							}
 						}
 					})
 				}

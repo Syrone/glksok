@@ -170,9 +170,20 @@ a
 		&:invalid:focus
 			box-shadow: none
 
+textarea.form-control
+	max-height: 16rem
+	height: initial
+
+.form-floating
+
+	> textarea.form-control
+		height: initial
+		min-height: 10rem
+
 .form
 
 	&-control
+		min-height: 3.5rem
 
 		&.is-invalid
 
@@ -185,9 +196,8 @@ a
 				opacity: 0
 				visibility: hidden
 				position: absolute
-				top: 50%
+				top: 1rem
 				right: 1rem
-				transform: translateY(-50%)
 
 			.form-control
 				padding-right: 3rem

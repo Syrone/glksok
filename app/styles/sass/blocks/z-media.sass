@@ -98,7 +98,9 @@
 		.form-floating
 
 			&-xs,
-			&-sm
+			&-sm,
+			&-md
+				width: 100%
 				max-width: initial
 
 	.card-skipass
@@ -165,6 +167,13 @@
 
 		&-footer
 			padding: 1.5rem 4.5rem 4.25rem
+
+	.modal-promocode
+
+		.modal-header,
+		.modal-body,
+		.modal-footer
+			padding-inline: 3.5rem
 
 @media (max-width: 575.98px)
 
@@ -238,6 +247,11 @@
 			.h1
 				font-size: 2.25rem
 				line-height: 2.5rem
+
+		&-inputs
+
+			.card-button
+				width: 100%
 
 	.card-mini
 		background-position: calc( 100% + 5.5rem ) 0%
@@ -428,6 +442,13 @@
 
 			& > *
 				width: fit-content
+
+	.modal-promocode
+
+		.modal-header,
+		.modal-body,
+		.modal-footer
+			padding-inline: 1rem
 
 	.footer
 		padding: 1rem 0
